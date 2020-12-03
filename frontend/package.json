@@ -9,10 +9,10 @@
   "license": "__TODO__",
   "homepage": ".",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "yarn elm:build && react-scripts build",
     "elm:start": "elm-live src/Main.elm -- --output='public/elm.js'",
-    "elm:build": "elm make src/Main.elm --optimize --output='public/elm.js'"
+    "elm:build": "elm make src/Main.elm --optimize --output='public/elm.js'",
+    "start": "react-scripts start",
+    "build": "yarn elm:build && react-scripts build"
   },
   "dependencies": {
     "streamlit-component-lib": "^1.1.1"
