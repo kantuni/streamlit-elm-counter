@@ -9,5 +9,5 @@ counter = components.declare_component(
     path="frontend/build/",
 )
 
-count = counter(key="count", initial=5, default=5)
+count = counter(key="count", initial=0, default=0)
 st.markdown(f"The value of the counter is **{count}**.")
