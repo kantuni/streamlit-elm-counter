@@ -16,9 +16,9 @@ app.ports.fromElm.subscribe((count: number) => {
   Streamlit.setComponentValue(count)
 })
 
-// Only sent the initial value if this variable is false.
-// Otherwise, the counter will always be reset to the initial value.
-let initialValueSent = false
+// Only set the default value if this variable is false.
+// Otherwise, the counter will reset to the default value after every render.
+let defaultValueHasBeenSet = false
 
 /**
  * The component's render function. This will be called immediately after
@@ -29,12 +29,11 @@ function onRender(event: Event): void {
   // Get the RenderData args from the event.
   const { args } = (event as CustomEvent<RenderData>).detail
 
-  // Send the initial value to the Elm app,
-  // and set the component initial value.
-  if (!initialValueSent) {
-    app.ports.fromJS.send(args.initial)
-    Streamlit.setComponentValue(args.initial)
-    initialValueSent = true
+  // If the default value is provided, set the component value to it.
+  if (args.default !== null && !defaultValueHasBeenSet) {
+    app.ports.fromJS.send(args.default)
+    Streamlit.setComponentValue(args.default)
+    defaultValueHasBeenSet = true
   }
 }
 

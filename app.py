@@ -3,11 +3,11 @@ import streamlit.components.v1 as components
 
 counter = components.declare_component(
     "counter",
-    # For development use:
+    # Development:
     # url="http://localhost:3000/",
-    # For production use:
+    # Production:
     path="frontend/build/",
 )
 
-count = counter(key="count", initial=0, default=0)
+count = counter(key="count", default=0)
 st.markdown(f"The value of the counter is **{count}**.")

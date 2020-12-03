@@ -41,7 +41,7 @@ init _ =
 
 
 type Msg
-    = Initial Int
+    = Default Int
     | Increment
     | Decrement
 
@@ -49,7 +49,7 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Initial value ->
+        Default value ->
             ( { model | count = value }
             , Cmd.none
             )
@@ -84,7 +84,7 @@ view model =
 
 subscriptions : Model -> Sub Msg
 subscriptions _ =
-    fromJS Initial
+    fromJS Default
 
 
 

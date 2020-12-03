@@ -5145,13 +5145,13 @@ var $author$project$Main$init = function (_v0) {
 		{j: 0},
 		$elm$core$Platform$Cmd$none);
 };
-var $author$project$Main$Initial = function (a) {
+var $author$project$Main$Default = function (a) {
 	return {$: 0, a: a};
 };
 var $elm$json$Json$Decode$int = _Json_decodeInt;
 var $author$project$Main$fromJS = _Platform_incomingPort('fromJS', $elm$json$Json$Decode$int);
 var $author$project$Main$subscriptions = function (_v0) {
-	return $author$project$Main$fromJS($author$project$Main$Initial);
+	return $author$project$Main$fromJS($author$project$Main$Default);
 };
 var $elm$json$Json$Encode$int = _Json_wrap;
 var $author$project$Main$fromElm = _Platform_outgoingPort('fromElm', $elm$json$Json$Encode$int);
