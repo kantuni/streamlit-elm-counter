@@ -71,10 +71,10 @@ update msg model =
 
 view : Model -> Html.Html Msg
 view model =
-    div []
-        [ button [ onClick Decrement ] [ text "-" ]
-        , div [] [ text (String.fromInt model.count) ]
-        , button [ onClick Increment ] [ text "+" ]
+    div [ style "display" "flex", style "gap" "8px" ]
+        [ button [ onClick Decrement, class "button is-white" ] [ text "-" ]
+        , span [ class "tag is-large is-link" ] [ text (String.fromInt model.count) ]
+        , button [ onClick Increment, class "button is-white" ] [ text "+" ]
         ]
 
 
