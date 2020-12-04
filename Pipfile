@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-streamlit-nightly = "*"
+streamlit-nightly = "==0.72.1.dev20201202"
 
 [dev-packages]
 black = "*"
